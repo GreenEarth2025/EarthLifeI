@@ -27,15 +27,24 @@
       margin: 20px;
       padding: 20px;
       border-radius: 10px;
-      cursor: pointer;
     }
     .year-title {
       font-size: 1.8em;
       color: #ffd700;
+      margin-bottom: 10px;
+    }
+    .toggle-button {
+      background-color: #ffd700;
+      color: #000;
+      border: none;
+      padding: 10px 15px;
+      font-size: 1em;
+      border-radius: 5px;
+      cursor: pointer;
     }
     .year-content {
       display: none;
-      margin-top: 10px;
+      margin-top: 15px;
     }
     .story, .tip, .law, .quote {
       margin-top: 10px;
@@ -46,26 +55,22 @@
     .quote { font-style: italic; color: #c0eaff; }
   </style>
   <script>
-    document.addEventListener("DOMContentLoaded", function () {
-      const sections = document.querySelectorAll(".year-section");
-      sections.forEach(section => {
-        section.addEventListener("click", function () {
-          const content = this.querySelector(".year-content");
-          content.style.display = content.style.display === "none" ? "block" : "none";
-        });
-      });
-    });
+    function toggleContent(id) {
+      const content = document.getElementById(id);
+      content.style.display = content.style.display === "none" ? "block" : "none";
+    }
   </script>
 </head>
 <body>
   <header>
     <h1>Prakash's Journey: Healing Through Time</h1>
-    <p>Click on each year to unfold the story, discover remedies, and reflect on growth 🌄</p>
+    <p>Click on each button to unfold the story, discover remedies, and reflect on growth 🌄</p>
   </header>
 
   <div class="year-section">
     <div class="year-title">2001 – Migration to Australia 🇮🇳🇦🇺</div>
-    <div class="year-content">
+    <button class="toggle-button" onclick="toggleContent('year2001')">Click here for this year's story</button>
+    <div class="year-content" id="year2001">
       <div class="story">I migrated from India to Australia, leaving behind familiar roots to build a new life. It was a leap of faith driven by hope and ambition.</div>
       <div class="tip">Reflect on your courage and adaptability. Write a letter to your younger self celebrating this bold step.</div>
       <div class="law">Australian Law: Migration Act 1958 – family reunification provisions.<br>Indian Law: Hindu Adoption and Maintenance Act 1956 – family support obligations.</div>
@@ -75,7 +80,8 @@
 
   <div class="year-section">
     <div class="year-title">2004 – Marriage Begins 💍</div>
-    <div class="year-content">
+    <button class="toggle-button" onclick="toggleContent('year2004')">Click here for this year's story</button>
+    <div class="year-content" id="year2004">
       <div class="story">I married my wife, a brilliant and caring woman. We were partners in every sense, building a life together in a new land.</div>
       <div class="tip">Revisit your vows. Create a memory box with early photos and shared dreams.</div>
       <div class="law">Australian Law: Marriage Act 1961 – legal recognition and rights.<br>Indian Law: Hindu Marriage Act 1955 – conditions and duties of marriage.</div>
@@ -85,7 +91,8 @@
 
   <div class="year-section">
     <div class="year-title">2006 – Birth of Son 👶</div>
-    <div class="year-content">
+    <button class="toggle-button" onclick="toggleContent('year2006')">Click here for this year's story</button>
+    <div class="year-content" id="year2006">
       <div class="story">Our son was born, bringing joy and purpose. I embraced fatherhood with devotion and a deep sense of responsibility.</div>
       <div class="tip">Reconnect through shared parenting memories. Ask your son about his favorite childhood moment.</div>
       <div class="law">Australian Law: Family Law Act 1975 – parenting responsibilities.<br>Indian Law: Guardians and Wards Act 1890 – parental duties.</div>
@@ -95,7 +102,8 @@
 
   <div class="year-section">
     <div class="year-title">2013 – Birth of Daughter 🎀</div>
-    <div class="year-content">
+    <button class="toggle-button" onclick="toggleContent('year2013')">Click here for this year's story</button>
+    <div class="year-content" id="year2013">
       <div class="story">Our daughter was born, completing our family. Her presence brought warmth and laughter into our home.</div>
       <div class="tip">Create rituals of connection—family walks, shared meals, bedtime stories.</div>
       <div class="law">Australian Law: Family Law Act 1975 – child support and care.<br>Indian Law: Juvenile Justice Act 2000 – child protection and welfare.</div>
@@ -105,7 +113,8 @@
 
   <div class="year-section">
     <div class="year-title">2017 – Emotional Withdrawal Begins 💔</div>
-    <div class="year-content">
+    <button class="toggle-button" onclick="toggleContent('year2017')">Click here for this year's story</button>
+    <div class="year-content" id="year2017">
       <div class="story">My wife began withdrawing emotionally. Communication broke down, and I felt excluded and deeply hurt. I tried to hold the family together with dignity and patience.</div>
       <div class="tip">Begin journaling your emotions. Seek couples therapy or individual counseling.</div>
       <div class="law">Australian Law: Family Law Act 1975 – separation and mediation.<br>Indian Law: Protection of Women from Domestic Violence Act 2005 – emotional abuse provisions.</div>
@@ -115,7 +124,8 @@
 
   <div class="year-section">
     <div class="year-title">2025 – Seeking Healing and Stability 🌱</div>
-    <div class="year-content">
+    <button class="toggle-button" onclick="toggleContent('year2025')">Click here for this year's story</button>
+    <div class="year-content" id="year2025">
       <div class="story">Despite continued emotional distance, I remain committed to healing—for myself and my children. I seek respectful ways to reconnect and rebuild dignity in our relationships.</div>
       <div class="tip">Practice self-compassion daily. Explore mindfulness, reconnect with your children, and consider respectful outreach to your wife.</div>
       <div class="law">Australian Law: Family Law Amendment Bill 2023 – child-focused reforms.<br>Indian Law: Family Courts Act 1984 – reconciliation and counseling support.</div>
